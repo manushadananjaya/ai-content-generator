@@ -7,6 +7,8 @@ import templates from "@/app/(data)/Templates";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import { chatSession } from "@/utils/AiModel";
+import { useState } from "react";
 
 interface PROPS {
   params: {
@@ -19,8 +21,19 @@ function CreateNewContent(props: PROPS) {
     (template) => template.slug === props.params["template-slug"]
   );
 
-  const GenerateAiContent = (formData: any) => {
-    console.log(formData);
+  const [loading, setLoading] = useState(false);
+  const [aiOutput, setAiOutput] = useState<string>("Your Result will be shown here");
+
+  const GenerateAiContent = async (formData: any) => {
+    setLoading(true);
+    const SelectedPrompt = selectedTemplate?.aiPrompt;
+    const FinalAiPrompt = JSON.stringify({ prompt: SelectedPrompt, ...formData });
+    console.log(FinalAiPrompt);
+
+    const result = await chatSession.sendMessage(FinalAiPrompt);
+    setAiOutput(result.response.text());
+    console.log(result.response.text());
+    setLoading(false);
   };
 
   return (
@@ -36,10 +49,11 @@ function CreateNewContent(props: PROPS) {
         <FormSection
           selectedTemplate={selectedTemplate}
           userFormInput={(v: any) => GenerateAiContent(v)}
+          loading={loading}
         />
         <div className="col-span-2">
           {/*Output Section*/}
-          <OutputSection />
+          <OutputSection aiOutput={aiOutput}/>
         </div>
       </div>
     </div>
