@@ -39,6 +39,25 @@ const templates = [
             },
         ],
     },
+
+
+    {
+        name:"Blog Topic Ideas",
+        desc:"An AI tool that generate blog topic ideas depends on your blog niche",
+        category:"Blog",
+        icon:"https://cdn-icons-png.flaticon.com/128/2799/2799954.png",
+        aiPrompt:"Give me 5 blog topic idea in bullet wise only based on give niche and give me result in Rich text editor format",
+        slug:"generate-blog-topic-ideas",
+        form:[
+            {
+                label:"Enter your blog niche",
+                field:"input",
+                name:"niche",
+                required:true
+            }
+        ]
+    },
+    
     {
         name: "Youtube Tags",
         desc: "An AI tool that generate youtube tags depends on your youtube video content",
@@ -56,6 +75,74 @@ const templates = [
             },
         ],
     },
+    { 
+        name:"Youtube Description",
+        desc:"An AI tool that generate youtube description depends on your youtube video title",
+        category:"Youtube tool",
+        icon:"https://cdn-icons-png.flaticon.com/128/2799/2799954.png",
+        aiPrompt:"Write a youtube description based on the video title and give me result in Rich text editor format",
+        slug:"generate-youtube-description",
+        form:[
+            {
+                label:"Enter your video title",
+                field:"input",
+                name:"title",
+                required:true
+            }
+        ]
+    },
+    {
+        name:"Youtube SEO Title",
+        desc:"An AI tool that generate youtube SEO title depends on your youtube video content",
+        category:"Youtube tool",
+        icon:"https://cdn-icons-png.flaticon.com/128/2799/2799954.png",
+        aiPrompt:"Write a youtube SEO title based on the video content and give me result in Rich text editor format",
+        slug:"generate-youtube-seo-title",
+        form:[
+            {
+                label:"Enter your video content",
+                field:"textarea",
+                name:"content",
+                required:true
+            }
+        ]
+
+    },
+    {
+        name:"ReWrite Article (Plagiarism Free)",
+        desc:"An AI tool that rewrite article depends on your article content",
+        category:"Article",
+        icon:"https://cdn-icons-png.flaticon.com/128/2799/2799954.png",
+        aiPrompt:"Rewrite the article content plagiarism free and give me result in Rich text editor format",
+        slug:"rewrite-article",
+        form:[
+            {
+                label:"Enter your article content",
+                field:"textarea",
+                name:"content",
+                required:true
+            }
+        ]
+
+    },
+    {
+        name:"Text Improver",
+        desc:"An AI tool that improve your text content",
+        category:"Article",
+        icon:"https://cdn-icons-png.flaticon.com/128/2799/2799954.png",
+        aiPrompt:"Improve the text content and give me result in Rich text editor format",
+        slug:"text-improver",
+        form:[
+            {
+                label:"Enter your text content",
+                field:"textarea",
+                name:"content",
+                required:true
+            }
+        ]
+
+    }
+
     
 ];
 
