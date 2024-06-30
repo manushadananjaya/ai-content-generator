@@ -16,6 +16,7 @@ import moment from "moment";
 import { useContext } from "react";
 import { TotalUsageContext } from "@/app/(context)/TotalUsageContext";
 import { useRouter } from "next/navigation";
+import { UpdateCreditUsageContext } from "@/app/(context)/UpdateCreditUsageContext";
 
 interface PROPS {
   params: {
@@ -29,9 +30,14 @@ function CreateNewContent(props: PROPS) {
   );
 
   const [loading, setLoading] = useState(false);
-  const [aiOutput, setAiOutput] = useState<string>("Your Result will be shown here");
-  const {user} = useUser();
-  const {totalUsage, setTotalUsage} = useContext(TotalUsageContext);
+  const [aiOutput, setAiOutput] = useState<string>(
+    "Your Result will be shown here"
+  );
+  const { user } = useUser();
+  const { totalUsage, setTotalUsage } = useContext(TotalUsageContext);
+  const { updateCreditUsage, setUpdateCreditUsage } = useContext(
+    UpdateCreditUsageContext
+  );
   const router = useRouter();
 
   const GenerateAiContent = async (formData: any) => {
@@ -41,16 +47,24 @@ function CreateNewContent(props: PROPS) {
     }
     setLoading(true);
     const SelectedPrompt = selectedTemplate?.aiPrompt;
-    const FinalAiPrompt = JSON.stringify({ prompt: SelectedPrompt, ...formData });
+    const FinalAiPrompt = JSON.stringify({
+      prompt: SelectedPrompt,
+      ...formData,
+    });
     console.log(FinalAiPrompt);
 
     const result = await chatSession.sendMessage(FinalAiPrompt);
     setAiOutput(result?.response.text());
     await SaveInDb(formData, selectedTemplate?.slug, result?.response.text());
     setLoading(false);
+    setUpdateCreditUsage(Date.now())
   };
 
-  const SaveInDb = async (formData: any, templateSlug: any, aiResponse: string) => {
+  const SaveInDb = async (
+    formData: any,
+    templateSlug: any,
+    aiResponse: string
+  ) => {
     const data = {
       formData: JSON.stringify(formData),
       aiResponse: aiResponse,
@@ -80,7 +94,7 @@ function CreateNewContent(props: PROPS) {
         />
         <div className="col-span-2">
           {/*Output Section*/}
-          <OutputSection aiOutput={aiOutput}/>
+          <OutputSection aiOutput={aiOutput} />
         </div>
       </div>
     </div>

@@ -1,14 +1,14 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { useUser } from "@clerk/nextjs";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { db } from "@/utils/db";
 import { AIOutput } from "@/utils/schema";
 import { eq } from "drizzle-orm";
-import { useContext } from "react";
 import { TotalUsageContext } from "@/app/(context)/TotalUsageContext";
+import { UpdateCreditUsageContext } from "@/app/(context)/UpdateCreditUsageContext";
 
-async function getUsage(email: string | undefined) {
+async function getUsage(email: string) {
   if (!email) return [];
   return await db
     .select()
@@ -20,19 +20,21 @@ async function getUsage(email: string | undefined) {
 export default function UsageTrack() {
   const { user } = useUser();
   const { totalUsage, setTotalUsage } = useContext(TotalUsageContext);
+  const { updateCreditUsage } = useContext(UpdateCreditUsageContext);
+
+  const fetchUsage = async () => {
+    if (user?.primaryEmailAddress?.emailAddress) {
+      const records = await getUsage(user.primaryEmailAddress.emailAddress);
+      const total = records.reduce((acc, record) => {
+        return acc + (record.aiResponse?.split(" ").length || 0);
+      }, 0);
+      setTotalUsage(total);
+    }
+  };
 
   useEffect(() => {
-    const fetchUsage = async () => {
-      if (user?.primaryEmailAddress?.emailAddress) {
-        const records = await getUsage(user.primaryEmailAddress.emailAddress);
-        const total = records.reduce((acc, record) => {
-          return acc + (record.aiResponse?.split(" ").length || 0);
-        }, 0);
-        setTotalUsage(total);
-      }
-    };
     fetchUsage();
-  }, [setTotalUsage, user]);
+  }, [user, updateCreditUsage]);
 
   return (
     <div className="m-5">
@@ -46,7 +48,7 @@ export default function UsageTrack() {
         </div>
         <h2 className="text-sm my-2">{totalUsage}/10,000 Credits used</h2>
       </div>
-      <Button variant={"outline"} className="w-full my-3">
+      <Button variant="outline" className="w-full my-3">
         Upgrade
       </Button>
     </div>
