@@ -20,7 +20,7 @@ function SideNav() {
     {
       name: "Billing",
       icon: WalletCards,
-      link: "/dashboard/Billing",
+      link: "/dashboard/billing",
     },
     {
       name: "Settings",

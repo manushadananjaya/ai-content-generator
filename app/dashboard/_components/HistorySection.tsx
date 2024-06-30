@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { DataTable } from "./DataTableHistory";
-import { HistoryTableData, columnsHistoryTable } from "./columnsHistoryTable";
+import { HistoryTableData, columnsHistoryTable } from "./ColumnsHistoryTable";
 import { db } from "@/utils/db";
 import { AIOutput } from "@/utils/schema";
 
