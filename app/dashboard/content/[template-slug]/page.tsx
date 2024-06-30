@@ -9,6 +9,10 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { chatSession } from "@/utils/AiModel";
 import { useState } from "react";
+import { db } from "@/utils/db";
+import { AIOutput } from "@/utils/schema";
+import { useUser } from "@clerk/nextjs";
+import moment from "moment";
 
 interface PROPS {
   params: {
@@ -23,6 +27,7 @@ function CreateNewContent(props: PROPS) {
 
   const [loading, setLoading] = useState(false);
   const [aiOutput, setAiOutput] = useState<string>("Your Result will be shown here");
+  const {user} = useUser();
 
   const GenerateAiContent = async (formData: any) => {
     setLoading(true);
@@ -31,9 +36,22 @@ function CreateNewContent(props: PROPS) {
     console.log(FinalAiPrompt);
 
     const result = await chatSession.sendMessage(FinalAiPrompt);
-    setAiOutput(result.response.text());
-    console.log(result.response.text());
+    setAiOutput(result?.response.text());
+    await SaveInDb(formData, selectedTemplate?.slug, result?.response.text());
     setLoading(false);
+  };
+
+  const SaveInDb = async (formData: any, templateSlug: any, aiResponse: string) => {
+    const data = {
+      formData: JSON.stringify(formData),
+      aiResponse: aiResponse,
+      templateSlug: templateSlug,
+      createdBy: user?.primaryEmailAddress?.emailAddress || "", // Ensure createdBy is always a string
+      createdAt: moment().format("YYYY-MM-DD HH:mm:ss"),
+    };
+    await db.insert(AIOutput).values(data);
+
+    console.log("Data Saved in DB", data);
   };
 
   return (
