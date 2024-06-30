@@ -33,10 +33,16 @@ function TemplateListSection({ userSearchInput }: { userSearchInput: string }) {
   }, [userSearchInput]);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 p-4 sm:p-6 lg:p-10">
-      {templateList.map((item: TEMPLATE, index: number) => (
-        <TemplateCard key={index} {...item} />
-      ))}
+    <div className="p-4 sm:p-6 lg:p-10">
+      {templateList.length > 0 ? (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          {templateList.map((item: TEMPLATE, index: number) => (
+            <TemplateCard key={index} {...item} />
+          ))}
+        </div>
+      ) : (
+        <div className="text-center text-black">Hmm looks like we can&apos;t find it.</div>
+      )}
     </div>
   );
 }

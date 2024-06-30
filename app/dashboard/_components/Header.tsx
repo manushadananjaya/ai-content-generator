@@ -1,17 +1,27 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import { UserButton } from "@clerk/nextjs";
 import { Search, Menu } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { SearchContext } from "@/app/(context)/SearchContext";
 
-function Header(
-  { toggleSideNav }: { toggleSideNav: any },
-  { onSearchInput }: any
-) {
+function Header({ toggleSideNav }: { toggleSideNav: () => void }) {
   const pathname = usePathname();
+  const router = useRouter();
+  const { userSearchInput, setUserSearchInput } = useContext(SearchContext);
   const isSettingsPage = pathname === "/dashboard/settings";
+
+  const handleSearchInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const value = event.target.value;
+    setUserSearchInput(value);
+    if (value) {
+      router.push("/dashboard/search");
+    }
+  };
 
   return (
     <div className="p-5 shadow-sm bg-white border-b-2 flex justify-between items-center z-20">
@@ -29,8 +39,9 @@ function Header(
         <input
           type="text"
           placeholder="Search"
-          className="outline-none bg-transparent text-white"
-          onChange={(event) => onSearchInput(event.target.value)}
+          className="outline-none bg-transparent text-black"
+          value={userSearchInput}
+          onChange={handleSearchInputChange}
         />
       </div>
       <div className="flex gap-5 items-center">

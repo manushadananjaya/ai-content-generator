@@ -7,6 +7,7 @@ import {
   Settings,
   WalletCards,
   ChevronLeft,
+  Search,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 import UsageTrack from "./UsageTrack";
@@ -21,6 +22,7 @@ function SideNav({
 }) {
   const MenuList = [
     { name: "Home", icon: Home, link: "/dashboard" },
+    { name: "Search", icon: Search, link: "/dashboard/search" },
     { name: "History", icon: FileClock, link: "/dashboard/history" },
     { name: "Billing", icon: WalletCards, link: "/dashboard/billing" },
     { name: "Settings", icon: Settings, link: "/dashboard/settings" },

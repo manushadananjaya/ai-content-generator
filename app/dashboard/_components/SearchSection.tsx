@@ -1,24 +1,34 @@
-import { Search } from 'lucide-react'
-import React from 'react'
+import { Search } from "lucide-react";
+import React, { useContext } from "react";
+import { SearchContext } from "@/app/(context)/SearchContext";
 
-function SearchSection({ onSearchInput }:any) {
+function SearchSection() {
+  const { userSearchInput, setUserSearchInput } = useContext(SearchContext);
+
+  const handleSearchInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setUserSearchInput(event.target.value);
+  };
+
   return (
-    <div className='p-10 bg-gradient-to-br from-green-500 via-green-700 to to-blue-600 flex flex-col justify-center items-center text-white'>
-      <h2 className='text-3xl font-bold'>Browse all templates</h2>
-      <p>What would you like to create today?</p>
-      <div className='w-full flex justify-center'>
-        <div className='flex gap-2 items-center p-2 border my-5 rounded-md w-[30%] '>
-            <Search size={20} />
-            <input
-              type="text"
-              placeholder="Search"
-              className="outline-none bg-transparent text-white"
-              onChange={(event) => onSearchInput(event.target.value)}
-            />
+    <div className="p-10 bg-gradient-to-br from-green-500 via-green-700 to-blue-600 flex flex-col justify-center items-center text-white">
+      <h2 className="text-2xl sm:text-3xl font-bold">Browse all templates</h2>
+      <p className="mt-2">What would you like to create today?</p>
+      <div className="w-full flex justify-center mt-5">
+        <div className="flex gap-2 items-center p-2 border rounded-md w-full sm:w-2/3 md:w-1/2 lg:w-1/3">
+          <Search size={20} />
+          <input
+            type="text"
+            placeholder="Search"
+            className="outline-none bg-transparent text-white w-full"
+            value={userSearchInput}
+            onChange={handleSearchInputChange}
+          />
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default SearchSection
+export default SearchSection;

@@ -1,12 +1,13 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { useUser } from "@clerk/nextjs";
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { db } from "@/utils/db";
 import { AIOutput } from "@/utils/schema";
 import { eq } from "drizzle-orm";
 import { TotalUsageContext } from "@/app/(context)/TotalUsageContext";
 import { UpdateCreditUsageContext } from "@/app/(context)/UpdateCreditUsageContext";
+import { useRouter, usePathname } from "next/navigation";
 
 async function getUsage(email: string) {
   if (!email) return [];
@@ -21,6 +22,8 @@ export default function UsageTrack() {
   const { user } = useUser();
   const { totalUsage, setTotalUsage } = useContext(TotalUsageContext);
   const { updateCreditUsage } = useContext(UpdateCreditUsageContext);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const fetchUsage = async () => {
     if (user?.primaryEmailAddress?.emailAddress) {
@@ -36,6 +39,12 @@ export default function UsageTrack() {
     fetchUsage();
   }, [user, updateCreditUsage]);
 
+  const handleUpgradeClick = () => {
+    router.replace("/dashboard/billing");
+  };
+
+  const isBillingPage = pathname === "/dashboard/billing";
+
   return (
     <div className="m-5">
       <div className="bg-primary text-white rounded-lg p-3">
@@ -48,7 +57,12 @@ export default function UsageTrack() {
         </div>
         <h2 className="text-sm my-2">{totalUsage}/10,000 Credits used</h2>
       </div>
-      <Button variant="outline" className="w-full my-3">
+      <Button
+        variant="outline"
+        className="w-full my-3"
+        onClick={handleUpgradeClick}
+        disabled={isBillingPage}
+      >
         Upgrade
       </Button>
     </div>

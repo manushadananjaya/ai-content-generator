@@ -1,16 +1,17 @@
 "use client";
-import React from "react";
+import React, { useContext } from "react";
 import SearchSection from "./_components/SearchSection";
 import TemplateListSection from "./_components/TemplateListSection";
+import { SearchContext } from "../(context)/SearchContext";
+
 
 function Dashboard() {
-  const [userSearchInput, setUserSearchInput] = React.useState<string>("");
+  const { userSearchInput } = useContext(SearchContext);
+  
 
   return (
     <div>
-      <SearchSection
-        onSearchInput={(value: string) => setUserSearchInput(value)}
-      />
+      <SearchSection />
       <div className="text-center">
         <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mt-6 mb-2">
           We have 50+ AI Content Templates
@@ -20,6 +21,7 @@ function Dashboard() {
         </h3>
       </div>
       <TemplateListSection userSearchInput={userSearchInput} />
+      
     </div>
   );
 }
