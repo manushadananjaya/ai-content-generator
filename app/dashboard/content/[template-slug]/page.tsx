@@ -57,7 +57,7 @@ function CreateNewContent(props: PROPS) {
     setAiOutput(result?.response.text());
     await SaveInDb(formData, selectedTemplate?.slug, result?.response.text());
     setLoading(false);
-    setUpdateCreditUsage(Date.now())
+    setUpdateCreditUsage(Date.now());
   };
 
   const SaveInDb = async (
@@ -78,22 +78,21 @@ function CreateNewContent(props: PROPS) {
   };
 
   return (
-    <div className="p-10">
+    <div className="p-4 md:p-10">
       <Link href={"/dashboard"}>
         <Button>
-          {" "}
           <ArrowLeft /> Back
         </Button>
       </Link>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 py-5 ">
-        {/*Form Section*/}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 py-5">
+        {/* Form Section */}
         <FormSection
           selectedTemplate={selectedTemplate}
           userFormInput={(v: any) => GenerateAiContent(v)}
           loading={loading}
         />
-        <div className="col-span-2">
-          {/*Output Section*/}
+        <div className="col-span-1 md:col-span-2">
+          {/* Output Section */}
           <OutputSection aiOutput={aiOutput} />
         </div>
       </div>
