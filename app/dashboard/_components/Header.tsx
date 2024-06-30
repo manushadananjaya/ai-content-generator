@@ -6,7 +6,10 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
-function Header({ toggleSideNav }: { toggleSideNav: any }) {
+function Header(
+  { toggleSideNav }: { toggleSideNav: any },
+  { onSearchInput }: any
+) {
   const pathname = usePathname();
   const isSettingsPage = pathname === "/dashboard/settings";
 
@@ -23,7 +26,12 @@ function Header({ toggleSideNav }: { toggleSideNav: any }) {
       )}
       <div className="flex gap-2 items-center p-2 border rounded-md max-w-lg">
         <Search size={20} />
-        <input type="text" placeholder="Search" className="outline-none" />
+        <input
+          type="text"
+          placeholder="Search"
+          className="outline-none bg-transparent text-white"
+          onChange={(event) => onSearchInput(event.target.value)}
+        />
       </div>
       <div className="flex gap-5 items-center">
         <UserButton />

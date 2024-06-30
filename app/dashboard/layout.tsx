@@ -9,6 +9,7 @@ function Layout({ children }: { children: React.ReactNode }) {
   const [totalUsage, setTotalUsage] = useState<number>(0);
   const [updateCreditUsage, setUpdateCreditUsage] = useState<any>();
   const [isSideNavOpen, setIsSideNavOpen] = useState<boolean>(false);
+  
 
   const toggleSideNav = () => {
     setIsSideNavOpen(!isSideNavOpen);
