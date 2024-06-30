@@ -23,7 +23,7 @@ function Layout({ children }: { children: React.ReactNode }) {
         value={{ updateCreditUsage, setUpdateCreditUsage }}
       >
         <SearchContext.Provider value={{ userSearchInput, setUserSearchInput }}>
-          <div className="bg-slate-100 h-screen flex flex-col">
+          <div className="bg-slate-100 h-auto flex flex-col">
             <div
               className={`md:w-64 fixed z-50 transition-transform ${
                 isSideNavOpen ? "translate-x-0" : "-translate-x-full"
