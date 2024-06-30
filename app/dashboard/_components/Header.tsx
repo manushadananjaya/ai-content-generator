@@ -1,20 +1,31 @@
-import { UserButton } from "@clerk/nextjs";
-import { Search } from "lucide-react";
+"use client";
 import React from "react";
+import { UserButton } from "@clerk/nextjs";
+import { Search, Menu } from "lucide-react";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
-function Header() {
+function Header({ toggleSideNav }: { toggleSideNav: any }) {
+  const pathname = usePathname();
+  const isSettingsPage = pathname === "/dashboard/settings";
+
   return (
-    <div className="p-5 shadow-sm bg-white border-b-2 flex justify-between items-center">
+    <div className="p-5 shadow-sm bg-white border-b-2 flex justify-between items-center z-20">
+      {isSettingsPage ? (
+        <a href="/dashboard" className="md:hidden">
+          <Image src="/logo.svg" width={40} height={40} alt="logo" />
+        </a>
+      ) : (
+        <Button className="md:hidden" onClick={toggleSideNav}>
+          <Menu size={24} />
+        </Button>
+      )}
       <div className="flex gap-2 items-center p-2 border rounded-md max-w-lg">
         <Search size={20} />
-        <input
-          type="text"
-          placeholder="Search"
-          className="outline-none"
-        />
+        <input type="text" placeholder="Search" className="outline-none" />
       </div>
       <div className="flex gap-5 items-center">
-        <h2 className="bg-primary p-1 rounded-full text-xs text-white px-2">Join Membership just for $9.99/Month</h2>
         <UserButton />
       </div>
     </div>

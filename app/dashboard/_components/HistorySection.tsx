@@ -30,7 +30,7 @@ export default function HistorySection() {
   }, []);
 
   return (
-    <div className="p-5 shadow-md rounded-md border bg-white flex-col gap-5 my-5 mx-5">
+    <div className="p-5 shadow-md rounded-md border bg-white flex-col gap-5 my-5 mx-5 ">
       <h2 className="text-2xl font-bold">History</h2>
       <p className="font-extralight text-sm my-2">
         Your previously generated AI Contents
