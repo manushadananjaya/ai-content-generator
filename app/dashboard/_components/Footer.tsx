@@ -8,14 +8,16 @@ const Footer = () => {
     <div className="bg-gray-800 text-white p-5 md:p-10 border-t-2 border-gray-700">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="mb-5 md:mb-0">
-          <h2 className="text-2xl font-bold">Company Name</h2>
-          <p className="mt-2">Creating the future, one step at a time.</p>
+          <h2 className="text-2xl font-bold">VOOM</h2>
+          <p className="mt-2">
+            Supercharge your workflow with the power of AI - all in one place
+          </p>
         </div>
         <div className="flex flex-col md:flex-row gap-10">
           <div>
             <h3 className="font-semibold mb-2">Contact</h3>
-            <p>Email: info@company.com</p>
-            <p>Phone: (123) 456-7890</p>
+            <p>Email: info@voom.com</p>
+            <p>Phone: (+94)71 277-0284</p>
           </div>
           <div>
             <h3 className="font-semibold mb-2">Links</h3>
@@ -68,7 +70,7 @@ const Footer = () => {
       </div>
       <div className="text-center mt-10">
         <p>
-          &copy; {new Date().getFullYear()} Company Name. All rights reserved.
+          &copy; {new Date().getFullYear()} VOOM. All rights reserved.
         </p>
       </div>
     </div>
