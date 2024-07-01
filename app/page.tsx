@@ -61,82 +61,31 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Head>
-        <title>AIwave - AI SaaS Platform</title>
-        <meta name="description" content="AIwave - Your AI SaaS Platform" />
+        <title>VOOM - AI SaaS Platform</title>
+        <meta name="description" content="VOOM - Your AI SaaS Platform" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <WavyBackground className="max-w-7xl mx-auto pb-16 sm:pb-24 lg:pb-40">
         <Navbar className="top-2" />
 
         <main className="py-16 sm:py-24 lg:py-32">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white overflow-hidden shadow rounded-lg">
-              <div className="px-4 py-8 sm:px-6 lg:px-8">
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">
-                  Examine the Potential of{" "}
-                  <FlipWords words={["Ai Chatting", "Ai Writing"]} />
-                </h2>
-                <p className="mt-4 text-lg text-gray-500">
-                  AIwave is your ultimate AI SaaS platform. Explore our features
-                  and see how we can help your business grow.
-                </p>
-                <div className="mt-6 flex flex-wrap gap-4">
-                  <a
-                    href="#"
-                    className="px-6 py-3 bg-blue-600 text-white text-lg font-medium rounded-md hover:bg-blue-700"
-                  >
-                    Get Started
-                  </a>
-                  <a
-                    href="#"
-                    className="px-6 py-3 bg-gray-200 text-gray-800 text-lg font-medium rounded-md hover:bg-gray-300"
-                  >
-                    Learn More
-                  </a>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-4xl sm:text-6xl font-extrabold text-black dark:text-white">
+              Examine the Potential of{" "}
+              <FlipWords words={["Ai Chatting", "Ai Writing"]} />
+            </h2>
+          </div>
+          <div className="mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+            <a href="/dashboard">
+              <button className="p-[3px] relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+                <div className="px-8 py-2 bg-black rounded-[6px] relative group transition duration-200 text-white hover:bg-transparent">
+                  Get Started
                 </div>
-              </div>
-              <div className="px-4 py-6 sm:px-6 lg:px-8 bg-gray-50">
-                <h3 className="text-2xl font-bold text-gray-900">
-                  Our Features
-                </h3>
-                <ul className="mt-4 space-y-4">
-                  <li className="flex items-start">
-                    <span className="flex-shrink-0 h-6 w-6 bg-blue-600 text-white rounded-full flex items-center justify-center">
-                      ✓
-                    </span>
-                    <p className="ml-3 text-lg text-gray-700">
-                      Feature One: Description of feature one.
-                    </p>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="flex-shrink-0 h-6 w-6 bg-blue-600 text-white rounded-full flex items-center justify-center">
-                      ✓
-                    </span>
-                    <p className="ml-3 text-lg text-gray-700">
-                      Feature Two: Description of feature two.
-                    </p>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="flex-shrink-0 h-6 w-6 bg-blue-600 text-white rounded-full flex items-center justify-center">
-                      ✓
-                    </span>
-                    <p className="ml-3 text-lg text-gray-700">
-                      Feature Three: Description of feature three.
-                    </p>
-                  </li>
-                </ul>
-              </div>
-            </div>
+              </button>
+            </a>
           </div>
         </main>
-
-        <footer className="bg-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="py-8 text-center text-gray-500">
-              &copy; 2024 AIwave. All rights reserved.
-            </div>
-          </div>
-        </footer>
       </WavyBackground>
     </div>
   );
