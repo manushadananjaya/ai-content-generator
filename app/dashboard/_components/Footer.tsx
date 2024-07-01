@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="bg-gray-800 text-white p-5 md:p-10 border-t-2 border-gray-700">
+    <footer className="bg-gray-800 text-white p-5 md:p-10 border-t-2 border-gray-700">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="mb-5 md:mb-0">
           <h2 className="text-2xl font-bold">VOOM</h2>
@@ -69,11 +69,9 @@ const Footer = () => {
         </div>
       </div>
       <div className="text-center mt-10">
-        <p>
-          &copy; {new Date().getFullYear()} VOOM. All rights reserved.
-        </p>
+        <p>&copy; {new Date().getFullYear()} VOOM. All rights reserved.</p>
       </div>
-    </div>
+    </footer>
   );
 };
 

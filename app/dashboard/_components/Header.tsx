@@ -34,16 +34,21 @@ function Header({ toggleSideNav }: { toggleSideNav: () => void }) {
           <Menu size={24} />
         </Button>
       )}
+
+      <div className="hidden sm:block align-middle text-3xl relative font-bold ">
+        <a href="/dashboard">VOOM</a>
+      </div>
       <div className="flex gap-2 items-center p-2 border rounded-md max-w-lg">
         <Search size={20} />
         <input
           type="text"
-          placeholder="Search"
+          placeholder="Search in VOOM"
           className="outline-none bg-transparent text-black"
           value={userSearchInput}
           onChange={handleSearchInputChange}
         />
       </div>
+
       <div className="flex gap-5 items-center">
         <UserButton />
       </div>

@@ -23,11 +23,11 @@ function Layout({ children }: { children: React.ReactNode }) {
         value={{ updateCreditUsage, setUpdateCreditUsage }}
       >
         <SearchContext.Provider value={{ userSearchInput, setUserSearchInput }}>
-          <div className="bg-slate-100 h-auto flex flex-col">
+          <div className="min-h-screen flex flex-col bg-slate-100">
             <div
-              className={`md:w-64 fixed z-50 transition-transform ${
+              className={`fixed z-50 transition-transform ${
                 isSideNavOpen ? "translate-x-0" : "-translate-x-full"
-              } md:translate-x-0`}
+              } md:translate-x-0 md:w-64`}
             >
               <SideNav
                 toggleSideNav={toggleSideNav}
@@ -40,9 +40,9 @@ function Layout({ children }: { children: React.ReactNode }) {
                 onClick={toggleSideNav}
               ></div>
             )}
-            <div className="md:ml-64 flex-grow flex flex-col">
+            <div className="flex-grow md:ml-64 flex flex-col">
               <Header toggleSideNav={toggleSideNav} />
-              <div className="flex-grow">{children}</div>
+              <main className="flex-grow">{children}</main>
               <Footer />
             </div>
           </div>
