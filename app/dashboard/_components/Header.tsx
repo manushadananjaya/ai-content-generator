@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { SearchContext } from "@/app/(context)/SearchContext";
+import { ModeToggle } from "@/components/ui/mode-toggle";
 
 function Header({ toggleSideNav }: { toggleSideNav: () => void }) {
   const pathname = usePathname();
@@ -47,6 +48,9 @@ function Header({ toggleSideNav }: { toggleSideNav: () => void }) {
           value={userSearchInput}
           onChange={handleSearchInputChange}
         />
+      </div>
+      <div>
+        <ModeToggle />
       </div>
 
       <div className="flex gap-5 items-center">
