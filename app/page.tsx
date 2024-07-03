@@ -9,6 +9,39 @@ import { useState } from "react";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Button } from "@/components/ui/moving-border";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+
+const slideMoveContent = [
+  {
+    quote:
+      "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair.",
+    name: "Charles Dickens",
+    title: "A Tale of Two Cities",
+  },
+  {
+    quote:
+      "To be, or not to be, that is the question: Whether 'tis nobler in the mind to suffer The slings and arrows of outrageous fortune, Or to take Arms against a Sea of troubles, And by opposing end them: to die, to sleep.",
+    name: "William Shakespeare",
+    title: "Hamlet",
+  },
+  {
+    quote: "All that we see or seem is but a dream within a dream.",
+    name: "Edgar Allan Poe",
+    title: "A Dream Within a Dream",
+  },
+  {
+    quote:
+      "It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.",
+    name: "Jane Austen",
+    title: "Pride and Prejudice",
+  },
+  {
+    quote:
+      "Call me Ishmael. Some years ago—never mind how long precisely—having little or no money in my purse, and nothing particular to interest me on shore, I thought I would sail about a little and see the watery part of the world.",
+    name: "Herman Melville",
+    title: "Moby-Dick",
+  },
+];
 
 const content = [
   {
@@ -26,14 +59,14 @@ const content = [
     description:
       "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
     content: (
-      <div className="h-full w-full  flex items-center justify-center text-white">
-        <Image
+      <div className="h-full w-full flex items-center justify-center text-white">
+        {/* <Image
           src="/linear.webp"
           width={300}
           height={300}
           className="h-full w-full object-cover"
           alt="linear board demo"
-        />
+        /> */}
       </div>
     ),
   },
@@ -105,14 +138,14 @@ function Navbar({ className }: { className?: string }) {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 overflow-x-hidden">
       <Head>
         <title>VOOM - AI SaaS Platform</title>
         <meta name="description" content="VOOM - Your AI SaaS Platform" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <WavyBackground className="max-w-7xl mx-auto min-h-screen">
+      <WavyBackground className="max-w-7xl mx-auto min-h-[75vh]">
         <div className="relative py-16 sm:py-24 lg:py-32">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl sm:text-6xl font-extrabold text-black dark:text-white">
@@ -128,14 +161,22 @@ export default function Home() {
               <button className="p-[3px] relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
                 <div className="px-9 py-4 bg-black rounded-[6px] relative group transition duration-200 text-white hover:bg-transparent">
-                  Get Started
+                  Try VOOM
                 </div>
               </button>
             </a>
           </div>
         </div>
       </WavyBackground>
-      <div className="h-screen mt-24 content-center align-middle">
+      <div className="rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
+        <InfiniteMovingCards
+          items={slideMoveContent}
+          direction="right"
+          speed="slow"
+        />
+      </div>
+
+      <div className="min-h-screen flex items-center justify-center">
         <StickyScroll content={content} />
       </div>
     </div>
