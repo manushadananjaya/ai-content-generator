@@ -10,6 +10,105 @@ import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Button } from "@/components/ui/moving-border";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { HeroParallax } from "@/components/ui/hero-parallax";
+import { BackgroundGradient } from "@/components/ui/background-gradient";
+import Footer from "./dashboard/_components/Footer";
+
+export const Items = [
+  {
+    title: "Moonbeam",
+    link: "https://gomoonbeam.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
+  },
+  {
+    title: "Cursor",
+    link: "https://cursor.so",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/cursor.png",
+  },
+  {
+    title: "Rogue",
+    link: "https://userogue.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/rogue.png",
+  },
+
+  {
+    title: "Editorially",
+    link: "https://editorially.org",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/editorially.png",
+  },
+  {
+    title: "Editrix AI",
+    link: "https://editrix.ai",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/editrix.png",
+  },
+  {
+    title: "Pixel Perfect",
+    link: "https://app.pixelperfect.quest",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
+  },
+
+  {
+    title: "Algochurn",
+    link: "https://algochurn.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
+  },
+  {
+    title: "Aceternity UI",
+    link: "https://ui.aceternity.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
+  },
+  {
+    title: "Tailwind Master Kit",
+    link: "https://tailwindmasterkit.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
+  },
+  {
+    title: "SmartBridge",
+    link: "https://smartbridgetech.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
+  },
+  {
+    title: "Renderwork Studio",
+    link: "https://renderwork.studio",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
+  },
+
+  {
+    title: "Creme Digital",
+    link: "https://cremedigital.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
+  },
+  {
+    title: "Golden Bells Academy",
+    link: "https://goldenbellsacademy.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
+  },
+  {
+    title: "Invoker Labs",
+    link: "https://invoker.lol",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/invoker.png",
+  },
+  {
+    title: "E Free Invoice",
+    link: "https://efreeinvoice.com",
+    thumbnail:
+      "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
+  },
+];
 
 const slideMoveContent = [
   {
@@ -145,7 +244,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Navbar />
-      <WavyBackground className="max-w-7xl mx-auto min-h-[75vh]">
+      <HeroParallax products={Items} />
+      <WavyBackground className="max-w-7xl mx-auto min-h-[50vh] absolute">
         <div className="relative py-16 sm:py-24 lg:py-32">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-4xl sm:text-6xl font-extrabold text-black dark:text-white">
@@ -161,7 +261,7 @@ export default function Home() {
               <button className="p-[3px] relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
                 <div className="px-9 py-4 bg-black rounded-[6px] relative group transition duration-200 text-white hover:bg-transparent">
-                  Try VOOM
+                  Try VOOM For Free
                 </div>
               </button>
             </a>
@@ -178,6 +278,67 @@ export default function Home() {
 
       <div className="min-h-screen flex items-center justify-center">
         <StickyScroll content={content} />
+      </div>
+      <div className="flex items-center justify-center text-center mt-16">
+        <h1 className="text-4xl pb-7 my-10 sm:text-6xl font-extrabold text-black dark:text-white">
+          Subscribe to Explore More
+        </h1>
+      </div>
+      <div className="flex flex-col lg:flex-row lg:flex-wrap justify-around gap-6 p-4">
+        <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
+          <p className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
+            Basic
+          </p>
+
+          <p className="text-sm text-neutral-600 dark:text-neutral-400">
+            The Air Jordan 4 Retro Reimagined Bred will release on Saturday,
+            February 17, 2024. Your best opportunity to get these right now is
+            by entering raffles and waiting for the official releases.
+          </p>
+          <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
+            <span>Free</span>
+            <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
+              $100
+            </span>
+          </button>
+        </BackgroundGradient>
+        <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
+          <p className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
+            Premium
+          </p>
+
+          <p className="text-sm text-neutral-600 dark:text-neutral-400">
+            The Air Jordan 4 Retro Reimagined Bred will release on Saturday,
+            February 17, 2024. Your best opportunity to get these right now is
+            by entering raffles and waiting for the official releases.
+          </p>
+          <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
+            <span>Monthly</span>
+            <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
+              $9.99
+            </span>
+          </button>
+        </BackgroundGradient>
+        <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
+          <p className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
+            Enterprise
+          </p>
+
+          <p className="text-sm text-neutral-600 dark:text-neutral-400">
+            The Air Jordan 4 Retro Reimagined Bred will release on Saturday,
+            February 17, 2024. Your best opportunity to get these right now is
+            by entering raffles and waiting for the official releases.
+          </p>
+          <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
+            <span>Yearly</span>
+            <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
+              $99.99
+            </span>
+          </button>
+        </BackgroundGradient>
+      </div>
+      <div className="pt-20">
+        <Footer />
       </div>
     </div>
   );
