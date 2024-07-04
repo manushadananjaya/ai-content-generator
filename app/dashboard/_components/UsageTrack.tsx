@@ -25,17 +25,16 @@ export default function UsageTrack() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const fetchUsage = async () => {
-    if (user?.primaryEmailAddress?.emailAddress) {
-      const records = await getUsage(user.primaryEmailAddress.emailAddress);
-      const total = records.reduce((acc, record) => {
-        return acc + (record.aiResponse?.split(" ").length || 0);
-      }, 0);
-      setTotalUsage(total);
-    }
-  };
-
   useEffect(() => {
+    const fetchUsage = async () => {
+      if (user?.primaryEmailAddress?.emailAddress) {
+        const records = await getUsage(user.primaryEmailAddress.emailAddress);
+        const total = records.reduce((acc, record) => {
+          return acc + (record.aiResponse?.split(" ").length || 0);
+        }, 0);
+        setTotalUsage(total);
+      }
+    };
     fetchUsage();
   }, [user, updateCreditUsage]);
 

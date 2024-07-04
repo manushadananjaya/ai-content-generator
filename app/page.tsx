@@ -1,4 +1,5 @@
 "use client";
+
 import Head from "next/head";
 import { FlipWords } from "@/components/ui/flip-words";
 import { WavyBackground } from "@/components/ui/wavy-background";
@@ -14,7 +15,7 @@ import { HeroParallax } from "@/components/ui/hero-parallax";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
 import Footer from "./dashboard/_components/Footer";
 
-export const Items = [
+const Items = [
   {
     title: "Moonbeam",
     link: "https://gomoonbeam.com",
