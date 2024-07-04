@@ -25,26 +25,26 @@ function Header({ toggleSideNav }: { toggleSideNav: () => void }) {
   };
 
   return (
-    <div className="p-5 shadow-sm bg-white border-b-2 flex justify-between items-center z-20">
+    <div className="p-5 shadow-sm bg-white dark:bg-gray-800 border-b-2 flex justify-between items-center z-20">
       {isSettingsPage ? (
         <a href="/dashboard" className="md:hidden">
           <Image src="/logo.svg" width={40} height={40} alt="logo" />
         </a>
       ) : (
-        <Button className="md:hidden" onClick={toggleSideNav}>
-          <Menu size={24} />
+        <Button className="md:hidden border dark:border-gray-500 bg-gray-700 dark:bg-gray-800" onClick={toggleSideNav}>
+          <Menu size={24} className="text-white"/>
         </Button>
       )}
 
       <div className="hidden sm:block align-middle text-3xl relative font-bold ">
         <a href="/dashboard">VOOM</a>
       </div>
-      <div className="flex gap-2 items-center p-2 border rounded-md max-w-lg">
+      <div className="flex gap-2 items-center p-2 border dark:border-gray-500 rounded-md max-w-lg">
         <Search size={20} />
         <input
           type="text"
           placeholder="Search in VOOM"
-          className="outline-none bg-transparent text-black"
+          className="outline-none bg-transparent text-black dark:text-white"
           value={userSearchInput}
           onChange={handleSearchInputChange}
         />

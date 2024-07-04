@@ -1,7 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { useUser } from "@clerk/nextjs";
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react"; // Add the import statement for React
 import { db } from "@/utils/db";
 import { AIOutput } from "@/utils/schema";
 import { eq } from "drizzle-orm";
@@ -47,11 +47,11 @@ export default function UsageTrack() {
 
   return (
     <div className="m-5">
-      <div className="bg-primary text-white rounded-lg p-3">
+      <div className="bg-gray-700 border border-gray-500 dark:bg-gray-900 text-white rounded-lg p-3 ">
         <h2 className="font-medium">Credits</h2>
-        <div className="h-2 bg-slate-400 w-full rounded-full mt-3">
+        <div className="h-2 bg-slate-500 w-full rounded-full mt-3 ">
           <div
-            className="h-2 bg-white rounded-full"
+            className="h-2 bg-white dark:bg-slate-200 rounded-full"
             style={{ width: `${(totalUsage / 10000) * 100}%` }}
           ></div>
         </div>
@@ -59,7 +59,7 @@ export default function UsageTrack() {
       </div>
       <Button
         variant="outline"
-        className="w-full my-3"
+        className="w-full my-3 dark:border-slate-500"
         onClick={handleUpgradeClick}
         disabled={isBillingPage}
       >

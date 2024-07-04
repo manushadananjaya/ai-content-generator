@@ -35,7 +35,7 @@ function SideNav({
   }, [path]);
 
   return (
-    <div className="h-screen relative p-5 shadow-sm bg-white border z-50">
+    <div className="h-screen relative p-5 shadow-sm bg-white dark:bg-gray-800 border z-50">
       <div className="flex justify-center border-b">
         <Image src="/logo.svg" width={120} height={100} alt="logo" />
       </div>
@@ -43,8 +43,8 @@ function SideNav({
         {MenuList.map((item, index) => (
           <a href={item.link} key={index}>
             <div
-              className={`flex items-center space-x-2 p-2 rounded-lg hover:bg-primary hover:text-white cursor-pointer ${
-                path === item.link ? "bg-primary text-white" : ""
+              className={`flex items-center space-x-2 p-2 my-4 rounded-lg hover:bg-slate-400 dark:hover:bg-slate-700 hover:text-white cursor-pointer ${
+                path === item.link ? "bg-gray-700 dark:bg-slate-500 text-white " : ""
               }`}
             >
               <item.icon size={20} />
@@ -53,13 +53,13 @@ function SideNav({
           </a>
         ))}
       </div>
-      <div className="absolute bottom-10 left-0 w-full">
+      <div className="absolute bottom-10 left-0 w-full ">
         <UsageTrack />
       </div>
       {isSideNavOpen && (
         <Button
           onClick={toggleSideNav}
-          className="absolute -right-10 md:hidden p-2 rounded-full bg-gray-200 hover:bg-gray-300 border border-gray-300"
+          className="absolute -right-10 md:hidden p-2 rounded-full bg-gray-200 hover:bg-gray-300 border border-gray-300 "
         >
           <ChevronLeft size={20} />
         </Button>
