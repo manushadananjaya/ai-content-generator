@@ -80,7 +80,7 @@ function CreateNewContent(props: PROPS) {
   return (
     <div className="p-4 md:p-10">
       <Link href={"/dashboard"}>
-        <Button>
+        <Button className="bg-white border text-gray-900 hover:bg-gray-700 hover:text-white dark:bg-gray-800 dark:border-gray-500 dark:text-gray-300 dark:hover:bg-slate-400">
           <ArrowLeft /> Back
         </Button>
       </Link>

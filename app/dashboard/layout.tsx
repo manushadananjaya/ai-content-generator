@@ -27,7 +27,7 @@ function Layout({ children }: { children: React.ReactNode }) {
             <div
               className={`fixed z-50 transition-transform ${
                 isSideNavOpen ? "translate-x-0" : "-translate-x-full"
-              } md:translate-x-0 md:w-64`}
+              } w-64`}
             >
               <SideNav
                 toggleSideNav={toggleSideNav}
@@ -36,11 +36,11 @@ function Layout({ children }: { children: React.ReactNode }) {
             </div>
             {isSideNavOpen && (
               <div
-                className="fixed inset-0 bg-black z-30 opacity-50 md:hidden"
+                className="fixed inset-0 bg-black z-30 opacity-50"
                 onClick={toggleSideNav}
               ></div>
             )}
-            <div className="flex-grow md:ml-64 flex flex-col">
+            <div className="flex-grow  flex flex-col">
               <Header toggleSideNav={toggleSideNav} />
               <main className="flex-grow">{children}</main>
               <Footer />

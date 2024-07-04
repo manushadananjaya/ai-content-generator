@@ -27,16 +27,19 @@ function Header({ toggleSideNav }: { toggleSideNav: () => void }) {
   return (
     <div className="p-5 shadow-sm bg-white dark:bg-gray-800 border-b-2 flex justify-between items-center z-20">
       {isSettingsPage ? (
-        <a href="/dashboard" className="md:hidden">
+        <a href="/dashboard">
           <Image src="/logo.svg" width={40} height={40} alt="logo" />
         </a>
       ) : (
-        <Button className="md:hidden border dark:border-gray-500 bg-gray-700 dark:bg-gray-800" onClick={toggleSideNav}>
-          <Menu size={24} className="text-white"/>
+        <Button
+          className="border dark:border-gray-500 bg-white hover:text-gray-50 text-gray-800 dark:bg-gray-800 dark:hover:bg-gray-500"
+          onClick={toggleSideNav}
+        >
+          <Menu size={24} className="text-gray-800 hover:text-gray-50 dark:text-gray-50" />
         </Button>
       )}
 
-      <div className="hidden sm:block align-middle text-3xl relative font-bold ">
+      <div className="hidden sm:block align-middle text-3xl relative font-bold">
         <a href="/dashboard">VOOM</a>
       </div>
       <div className="flex gap-2 items-center p-2 border dark:border-gray-500 rounded-md max-w-lg">

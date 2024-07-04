@@ -25,10 +25,10 @@ function OutputSection({ aiOutput }: PROPS) {
   };
 
   return (
-    <div className="bg-white shadow-lg border rounded">
+    <div className="bg-white dark:bg-gray-800 shadow-lg border dark:border-gray-500 rounded">
       <div className="flex justify-between items-center p-5">
         <h2 className="font-medium text-lg">Your Result</h2>
-        <Button className="flex gap-2" onClick={handleCopy}>
+        <Button className="flex gap-2 bg-white border text-gray-900 hover:bg-gray-700 hover:text-white dark:bg-gray-800 dark:border-gray-500 dark:text-gray-300 dark:hover:bg-slate-400" onClick={handleCopy}>
           <Copy className="w-4 h-4" />
           {copied ? "Copied!" : "Copy"}
         </Button>
@@ -42,6 +42,7 @@ function OutputSection({ aiOutput }: PROPS) {
         onChange={() =>
           console.log(editorRef.current.getInstance().getMarkdown() || "")
         }
+        
       />
     </div>
   );

@@ -9,7 +9,7 @@ const templates = [
     slug: "generate-blog-title",
     form: [
       {
-        label: "Enter your blog niche",
+        label: "Enter your blog Title",
         field: "input",
         name: "niche",
         required: true,
