@@ -103,7 +103,7 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
+    <div className="max-w-7xl relative mx-auto py-20 md:py-40 z-30 px-4 w-full left-0 top-0">
       <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
         The Ultimate <br /> AI studio
       </h1>
@@ -139,20 +139,24 @@ export const ProductCard = ({
     >
       <Link
         href={product.link}
-        className="block group-hover/product:shadow-2xl "
+        className="block group-hover/product:shadow-2xl"
       >
         <Image
-          src={product.thumbnail}
+          src={`/${product.thumbnail}`}
           height="600"
           width="600"
           className="object-cover object-left-top absolute h-full w-full inset-0"
           alt={product.title}
         />
       </Link>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
-        {product.title}
-      </h2>
+      <motion.div
+        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/product:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50"
+        whileHover={{
+          y: 0,
+        }}
+      >
+        <h2 className="text-white text-xl font-bold">{product.title}</h2>
+      </motion.div>
     </motion.div>
   );
 };

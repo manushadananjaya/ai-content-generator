@@ -17,97 +17,82 @@ import Footer from "./dashboard/_components/Footer";
 
 const Items = [
   {
-    title: "Moonbeam",
-    link: "https://gomoonbeam.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/moonbeam.png",
+    title: "Blog Content",
+    link: "./dashboard",
+    thumbnail: "ss1.png",
   },
   {
-    title: "Cursor",
-    link: "https://cursor.so",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cursor.png",
+    title: "Blog Title",
+    link: "./dashboard",
+    thumbnail: "ss2.png",
   },
   {
-    title: "Rogue",
-    link: "https://userogue.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/rogue.png",
+    title: "Blog Topic",
+    link: "./dashboard",
+    thumbnail: "ss3.png",
   },
 
   {
-    title: "Editorially",
-    link: "https://editorially.org",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editorially.png",
+    title: "Rewrite Article",
+    link: "./dashboard",
+    thumbnail: "ss4.png",
   },
   {
-    title: "Editrix AI",
-    link: "https://editrix.ai",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/editrix.png",
+    title: "Text Improver",
+    link: "./dashboard",
+    thumbnail: "ss5.png",
   },
   {
-    title: "Pixel Perfect",
-    link: "https://app.pixelperfect.quest",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/pixelperfect.png",
+    title: "Youtube Description",
+    link: "./dashboard",
+    thumbnail: "ss6.png",
   },
 
   {
-    title: "Algochurn",
-    link: "https://algochurn.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/algochurn.png",
+    title: "Youtube Tags",
+    link: "./dashboard",
+    thumbnail: "ss7.png",
   },
   {
-    title: "Aceternity UI",
-    link: "https://ui.aceternity.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/aceternityui.png",
+    title: "Youtube SEO Title",
+    link: "./dashboard",
+    thumbnail: "ss8.png",
   },
   {
-    title: "Tailwind Master Kit",
-    link: "https://tailwindmasterkit.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/tailwindmasterkit.png",
+    title: "Youtube SEO Title",
+    link: "./dashboard",
+    thumbnail: "ss8.png",
   },
   {
-    title: "SmartBridge",
-    link: "https://smartbridgetech.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/smartbridge.png",
+    title: "Blog Content",
+    link: "./dashboard",
+    thumbnail: "ss1.png",
   },
   {
-    title: "Renderwork Studio",
-    link: "https://renderwork.studio",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/renderwork.png",
+    title: "Blog Title",
+    link: "./dashboard",
+    thumbnail: "ss2.png",
   },
 
   {
-    title: "Creme Digital",
-    link: "https://cremedigital.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/cremedigital.png",
+    title: "Blog Topic",
+    link: "./dashboard",
+    thumbnail: "ss3.png",
   },
   {
-    title: "Golden Bells Academy",
-    link: "https://goldenbellsacademy.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/goldenbellsacademy.png",
+    title: "Rewrite Article",
+    link: "./dashboard",
+    thumbnail: "ss4.png",
   },
   {
-    title: "Invoker Labs",
-    link: "https://invoker.lol",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/invoker.png",
+    title: "Text Improver",
+    link: "./dashboard",
+    thumbnail: "ss5.png",
   },
   {
-    title: "E Free Invoice",
-    link: "https://efreeinvoice.com",
-    thumbnail:
-      "https://aceternity.com/images/products/thumbnails/new/efreeinvoice.png",
+    title: "Youtube Description",
+    link: "./dashboard",
+    thumbnail: "ss6.png",
   },
 ];
 
@@ -209,26 +194,7 @@ function Navbar({ className }: { className?: string }) {
           VOOM
         </Button>
         <div className="flex-1 flex justify-center">
-          <Menu setActive={setActive}>
-            <MenuItem setActive={setActive} active={active} item="Tools">
-              <div className="flex flex-col space-y-4 text-sm">
-                <HoveredLink href="/chat">Text Generator</HoveredLink>
-                <HoveredLink href="/chat">Image Generator</HoveredLink>
-                <HoveredLink href="/chat">AI Writing</HoveredLink>
-                <HoveredLink href="/chat">Video Generator</HoveredLink>
-                <HoveredLink href="/chat">Email Generator</HoveredLink>
-              </div>
-            </MenuItem>
-            <MenuItem setActive={setActive} active={active} item=""></MenuItem>
-            <MenuItem setActive={setActive} active={active} item="Pricing">
-              <div className="flex flex-col space-y-4 text-sm">
-                <HoveredLink href="/hobby">Hobby</HoveredLink>
-                <HoveredLink href="/individual">Individual</HoveredLink>
-                <HoveredLink href="/team">Team</HoveredLink>
-                <HoveredLink href="/enterprise">Enterprise</HoveredLink>
-              </div>
-            </MenuItem>
-          </Menu>
+          
         </div>
         <ModeToggle />
       </div>
@@ -253,7 +219,7 @@ export default function Home() {
               Examine the Potential of{" "}
               <FlipWords words={["Ai Chatting", "Ai Writing"]} />
             </h2>
-            <p className="mt-4 text-xl text-gray-300 dark:text-gray-400">
+            <p className="mt-4 text-xl text-gray-300 dark:text-gray-300">
               SuperCharge Your Workflow With The Power of AI
             </p>
           </div>
