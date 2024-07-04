@@ -42,7 +42,10 @@ export const columnsHistoryTable: ColumnDef<HistoryTableData>[] = [
       };
 
       return (
-        <Button onClick={handleCopy} className="w-20  bg-white border text-gray-900 hover:bg-gray-700 hover:text-white dark:bg-gray-800 dark:border-gray-500 dark:text-gray-300 dark:hover:bg-slate-400">
+        <Button
+          onClick={handleCopy}
+          className="w-20 bg-white border text-gray-900 hover:bg-gray-700 hover:text-white dark:bg-gray-800 dark:border-gray-500 dark:text-gray-300 dark:hover:bg-slate-400"
+        >
           {copied ? "Copied!" : "Copy"}
         </Button>
       );
