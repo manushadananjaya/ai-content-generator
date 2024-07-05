@@ -1,11 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { ColumnDef } from "@tanstack/react-table";
-import { RingLoader } from "react-spinners";
-import { DataTable } from "./DataTableHistory"; // Ensure this path is correct
+import { ScaleLoader } from "react-spinners";
+import { DataTable } from "./DataTableHistory"; 
 import { db } from "@/utils/db";
 import { AIOutput } from "@/utils/schema";
-import { columnsHistoryTable } from "./columnsHistoryTable"; // Ensure this path is correct
+import { columnsHistoryTable } from "./columnsHistoryTable"; 
+import { useTheme } from "next-themes";
 
 export type HistoryTableData = {
   Template: string;
@@ -29,6 +29,12 @@ async function getData(): Promise<HistoryTableData[]> {
 export default function HistorySection() {
   const [data, setData] = useState<HistoryTableData[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
+  const { theme } = useTheme();
+  const [loaderColor, setLoaderColor] = useState("#FFFFFF");
+
+  useEffect(() => {
+    setLoaderColor(theme === "dark" ? "#FFFFFF" : "#000000");
+  }, [theme]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,7 +53,7 @@ export default function HistorySection() {
       </p>
       {loading ? (
         <div className="flex justify-center items-center h-20">
-          <RingLoader loading={true} color="#123abc" />
+          <ScaleLoader loading={true} color={loaderColor} />
         </div>
       ) : (
         <DataTable columns={columnsHistoryTable} data={data} />
