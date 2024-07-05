@@ -1,10 +1,11 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { ColumnDef } from "@tanstack/react-table";
-import { Button } from "@/components/ui/button";
+import { RingLoader } from "react-spinners";
 import { DataTable } from "./DataTableHistory"; // Ensure this path is correct
 import { db } from "@/utils/db";
 import { AIOutput } from "@/utils/schema";
+import { columnsHistoryTable } from "./columnsHistoryTable"; // Ensure this path is correct
 
 export type HistoryTableData = {
   Template: string;
@@ -13,48 +14,6 @@ export type HistoryTableData = {
   Words: number;
   Copy: string;
 };
-
-export const columnsHistoryTable: ColumnDef<HistoryTableData>[] = [
-  {
-    header: "Template",
-    accessorKey: "Template",
-  },
-  {
-    header: "AI Response",
-    accessorKey: "AiResp",
-  },
-  {
-    header: "Date",
-    accessorKey: "Date",
-  },
-  {
-    header: "Words",
-    accessorKey: "Words",
-  },
-  {
-    header: "Copy",
-    accessorKey: "Copy",
-    cell: ({ row }) => {
-      // eslint-disable-next-line react-hooks/rules-of-hooks
-      const [copied, setCopied] = useState(false);
-
-      const handleCopy = () => {
-        navigator.clipboard.writeText(row.getValue("AiResp"));
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000);
-      };
-
-      return (
-        <Button
-          onClick={handleCopy}
-          className="w-20 bg-white border text-gray-900 hover:bg-gray-700 hover:text-white dark:bg-gray-800 dark:border-gray-500 dark:text-gray-300 dark:hover:bg-slate-400"
-        >
-          {copied ? "Copied!" : "Copy"}
-        </Button>
-      );
-    },
-  },
-];
 
 async function getData(): Promise<HistoryTableData[]> {
   const records = await db.select().from(AIOutput);
@@ -88,7 +47,7 @@ export default function HistorySection() {
       </p>
       {loading ? (
         <div className="flex justify-center items-center h-20">
-          <p>Loading...</p>
+          <RingLoader loading={true} color="#123abc" />
         </div>
       ) : (
         <DataTable columns={columnsHistoryTable} data={data} />
