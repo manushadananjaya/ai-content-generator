@@ -1,12 +1,11 @@
 "use client";
-
 import Head from "next/head";
 import { FlipWords } from "@/components/ui/flip-words";
 import { WavyBackground } from "@/components/ui/wavy-background";
-import Image from "next/image";
+
 import { HoveredLink, Menu, MenuItem } from "@/components/ui/navbar-menu";
 import { cn } from "@/utils/cn";
-import { useState } from "react";
+
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Button } from "@/components/ui/moving-border";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
@@ -178,7 +177,6 @@ const content = [
 ];
 
 function Navbar({ className }: { className?: string }) {
-  const [active, setActive] = useState<string | null>(null);
   return (
     <div
       className={cn(
@@ -193,9 +191,7 @@ function Navbar({ className }: { className?: string }) {
         >
           VOOM
         </Button>
-        <div className="flex-1 flex justify-center">
-          
-        </div>
+        <div className="flex-1 flex justify-center"></div>
         <ModeToggle />
       </div>
     </div>
@@ -265,7 +261,7 @@ export default function Home() {
           <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
             <span>Free</span>
             <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
-              $100
+              $0.00
             </span>
           </button>
         </BackgroundGradient>
