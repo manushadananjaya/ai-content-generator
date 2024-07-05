@@ -49,7 +49,7 @@ function TemplateListSection({ userSearchInput }: { userSearchInput: string }) {
           ))}
         </div>
       ) : (
-        <div className="text-center text-black">
+        <div className="text-center text-gray-600 dark:text-gray-500">
           Hmm looks like we can&apos;t find it.
         </div>
       )}
