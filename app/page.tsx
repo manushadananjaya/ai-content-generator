@@ -175,51 +175,72 @@ export default function Home() {
         </div>
         <div className="flex flex-col lg:flex-row lg:flex-wrap justify-around gap-6 p-4">
           <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-zinc-900">
-            <p className="text-base sm:text-xl mt-4 mb-2 dark:text-neutral-200">
-              Basic
-            </p>
-
-            <p className="text-sm dark:text-neutral-400">
-              The Air Jordan 4 Retro Reimagined Bred will release on Saturday,
-              February 17, 2024. Your best opportunity to get these right now is
-              by entering raffles and waiting for the official releases.
-            </p>
+            <h2 className="text-xl font-semibold mb-2">Free</h2>
+            <p className="text-2xl font-bold mb-1">0$</p>
+            <span className="text-gray-500 mb-4">/month</span>
+            <div className="flex flex-col items-center">
+              <h3 className="mb-2 flex items-center">
+                <span className="mr-2">✔️</span>10,000 words/month
+              </h3>
+              <h3 className="mb-2 flex items-center">
+                <span className="mr-2">✔️</span>50+ Content Templates
+              </h3>
+              <h3 className="mb-2 flex items-center">
+                <span className="mr-2">✔️</span>Unlimited Download and Copy
+              </h3>
+              <h3 className="mb-6 flex items-center">
+                <span className="mr-2">✔️</span>1 month of History
+              </h3>
+            </div>
             <button className="rounded-full pl-4 pr-1 py-1 flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
-              <span>Free</span>
-              <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
-                $0.00
-              </span>
+              <span>Currently Active Plan</span>
             </button>
           </BackgroundGradient>
           <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-zinc-900">
-            <p className="text-base sm:text-xl mt-4 mb-2 dark:text-neutral-200">
-              Premium
-            </p>
-
-            <p className="text-sm dark:text-neutral-400">
-              The Air Jordan 4 Retro Reimagined Bred will release on Saturday,
-              February 17, 2024. Your best opportunity to get these right now is
-              by entering raffles and waiting for the official releases.
-            </p>
+            <h2 className="text-xl font-semibold mb-2">Monthly</h2>
+            <p className="text-2xl font-bold mb-1">9.99$</p>
+            <span className="text-gray-500 mb-4">/month</span>
+            <div className="flex flex-col items-center">
+              <h3 className="mb-2 flex items-center">
+                <span className="mr-2">✔️</span>100,000 words/month
+              </h3>
+              <h3 className="mb-2 flex items-center">
+                <span className="mr-2">✔️</span>50+ Content Templates
+              </h3>
+              <h3 className="mb-2 flex items-center">
+                <span className="mr-2">✔️</span>Unlimited Download and Copy
+              </h3>
+              <h3 className="mb-6 flex items-center">
+                <span className="mr-2">✔️</span>2 months of History
+              </h3>
+            </div>
             <button className="rounded-full pl-4 pr-1 py-1 flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
-              <span>Monthly</span>
+              <span>Get Started</span>
               <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
                 $9.99
               </span>
             </button>
           </BackgroundGradient>
           <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-zinc-900">
-            <p className="text-base sm:text-xl mt-4 mb-2 dark:text-neutral-200">
-              Enterprise
-            </p>
-
-            <p className="text-sm dark:text-neutral-400">
-              The Air Jordan 4 Retro Reimagined Bred will release on Saturday,
-              February 17, 2024. Your best opportunity to get these right now is
-              by entering raffles and waiting for the official releases.
-            </p>
+            <h2 className="text-xl font-semibold mb-2">Yearly</h2>
+            <p className="text-2xl font-bold mb-1">99.99$</p>
+            <span className="text-gray-500 mb-4">/year</span>
+            <div className="flex flex-col items-center">
+              <h3 className="mb-2 flex items-center">
+                <span className="mr-2">✔️</span>100,000,000 words/month
+              </h3>
+              <h3 className="mb-2 flex items-center">
+                <span className="mr-2">✔️</span>50+ Content Templates
+              </h3>
+              <h3 className="mb-2 flex items-center">
+                <span className="mr-2">✔️</span>Unlimited Download and Copy
+              </h3>
+              <h3 className="mb-6 flex items-center">
+                <span className="mr-2">✔️</span>1 year of History
+              </h3>
+            </div>
             <button className="rounded-full pl-4 pr-1 py-1 flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
-              <span>Yearly</span>
+              <span>Get Started</span>
               <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
                 $99.99
               </span>
