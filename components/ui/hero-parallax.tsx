@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { FlipWords } from "./flip-words";
 
 export const HeroParallax = ({
   products,
@@ -57,7 +58,7 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[300vh] py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[300vh] py-40 dark:bg-grid-gray-800/[0.2] overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header />
       <motion.div
@@ -103,14 +104,26 @@ export const HeroParallax = ({
 
 export const Header = () => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 z-30 px-4 w-full left-0 top-0">
-      <h1 className="text-2xl md:text-7xl font-bold dark:text-white">
-        The Ultimate <br /> AI studio
-      </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-        Boost your productivity with our top-notch AI tools, designed to make
-        your work easier and more efficient. Try them today!
-      </p>
+    <div className="relative z-30 py-16 sm:py-24 lg:py-32">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 className="text-4xl sm:text-6xl font-extrabold text-black dark:text-white">
+          Examine the Potential of{" "}
+          <FlipWords words={["Ai Chatting", "Ai Writing"]} />
+        </h2>
+        <p className="mt-4 text-xl text-gray-300 dark:text-gray-300">
+          SuperCharge Your Workflow With The Power of AI
+        </p>
+      </div>
+      <div className="mt-16 flex justify-center">
+        <a href="/dashboard">
+          <button className="p-[3px] relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg" />
+            <div className="px-9 py-4 bg-black rounded-[6px] relative group transition duration-200 text-white hover:bg-transparent">
+              Try VOOM For Free
+            </div>
+          </button>
+        </a>
+      </div>
     </div>
   );
 };
