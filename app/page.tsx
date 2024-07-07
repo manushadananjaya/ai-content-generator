@@ -126,8 +126,6 @@ const slideMoveContent = [
   },
 ];
 
-
-
 function Navbar({ className }: { className?: string }) {
   return (
     <div
@@ -152,7 +150,7 @@ function Navbar({ className }: { className?: string }) {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50  dark:bg-gray-950 overflow-x-hidden">
+    <div className="min-h-screen dark bg-gray-950 overflow-x-hidden">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       <Head>
         <title>VOOM - AI SaaS Platform</title>
@@ -161,7 +159,7 @@ export default function Home() {
       </Head>
       <Navbar />
       <HeroParallax products={Items} />
-      <div className="bg-grid-black/[0.07]  dark:bg-grid-gray-500/[0.1]  ">
+      <div className="bg-grid-gray-500/[0.1]  dark:bg-grid-gray-500/[0.1]  ">
         <div className="rounded-md flex flex-col antialiased items-center justify-center relative overflow-hidden">
           <InfiniteMovingCards
             items={slideMoveContent}
@@ -170,58 +168,57 @@ export default function Home() {
           />
         </div>
 
-        
         <div className="flex items-center justify-center text-center mt-16">
-          <h1 className="text-4xl pb-7 my-10 sm:text-6xl font-extrabold text-black dark:text-white">
+          <h1 className="text-4xl pb-7 my-10 sm:text-6xl font-extrabold dark:text-white">
             Subscribe to Explore More
           </h1>
         </div>
         <div className="flex flex-col lg:flex-row lg:flex-wrap justify-around gap-6 p-4">
-          <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
-            <p className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
+          <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-zinc-900">
+            <p className="text-base sm:text-xl mt-4 mb-2 dark:text-neutral-200">
               Basic
             </p>
 
-            <p className="text-sm text-neutral-600 dark:text-neutral-400">
+            <p className="text-sm dark:text-neutral-400">
               The Air Jordan 4 Retro Reimagined Bred will release on Saturday,
               February 17, 2024. Your best opportunity to get these right now is
               by entering raffles and waiting for the official releases.
             </p>
-            <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
+            <button className="rounded-full pl-4 pr-1 py-1 flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
               <span>Free</span>
               <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
                 $0.00
               </span>
             </button>
           </BackgroundGradient>
-          <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
-            <p className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
+          <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-zinc-900">
+            <p className="text-base sm:text-xl mt-4 mb-2 dark:text-neutral-200">
               Premium
             </p>
 
-            <p className="text-sm text-neutral-600 dark:text-neutral-400">
+            <p className="text-sm dark:text-neutral-400">
               The Air Jordan 4 Retro Reimagined Bred will release on Saturday,
               February 17, 2024. Your best opportunity to get these right now is
               by entering raffles and waiting for the official releases.
             </p>
-            <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
+            <button className="rounded-full pl-4 pr-1 py-1 flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
               <span>Monthly</span>
               <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
                 $9.99
               </span>
             </button>
           </BackgroundGradient>
-          <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-white dark:bg-zinc-900">
-            <p className="text-base sm:text-xl text-black mt-4 mb-2 dark:text-neutral-200">
+          <BackgroundGradient className="rounded-[22px] max-w-sm p-4 sm:p-10 bg-zinc-900">
+            <p className="text-base sm:text-xl mt-4 mb-2 dark:text-neutral-200">
               Enterprise
             </p>
 
-            <p className="text-sm text-neutral-600 dark:text-neutral-400">
+            <p className="text-sm dark:text-neutral-400">
               The Air Jordan 4 Retro Reimagined Bred will release on Saturday,
               February 17, 2024. Your best opportunity to get these right now is
               by entering raffles and waiting for the official releases.
             </p>
-            <button className="rounded-full pl-4 pr-1 py-1 text-white flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
+            <button className="rounded-full pl-4 pr-1 py-1 flex items-center space-x-1 bg-black mt-4 text-xs font-bold dark:bg-zinc-800">
               <span>Yearly</span>
               <span className="bg-zinc-700 rounded-full text-[0.6rem] px-2 py-0 text-white">
                 $99.99
