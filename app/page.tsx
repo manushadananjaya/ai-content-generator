@@ -1,14 +1,13 @@
 "use client";
 import Head from "next/head";
 import { FlipWords } from "@/components/ui/flip-words";
-import { WavyBackground } from "@/components/ui/wavy-background";
 
 import { HoveredLink, Menu, MenuItem } from "@/components/ui/navbar-menu";
 import { cn } from "@/utils/cn";
 
 import { ModeToggle } from "@/components/ui/mode-toggle";
 import { Button } from "@/components/ui/moving-border";
-import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
+
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { HeroParallax } from "@/components/ui/hero-parallax";
 import { BackgroundGradient } from "@/components/ui/background-gradient";
@@ -133,14 +132,14 @@ function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "relative top-0 left-0 right-0 bg-white dark:bg-slate-900 z-50 px-4 sm:px-6 lg:px-8 shadow-md",
+        "relative top-0 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 shadow-md",
         className
       )}
     >
       <div className="flex justify-between items-center py-4">
         <Button
           borderRadius="1.75rem"
-          className="bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
+          className="bg-white dark:bg-slate-900 text-black dark:text-white text-xl border-neutral-200 dark:border-slate-800"
         >
           VOOM
         </Button>
@@ -153,7 +152,7 @@ function Navbar({ className }: { className?: string }) {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50  dark:bg-gray-900 overflow-x-hidden">
+    <div className="min-h-screen bg-gray-50  dark:bg-gray-950 overflow-x-hidden">
       <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
       <Head>
         <title>VOOM - AI SaaS Platform</title>
